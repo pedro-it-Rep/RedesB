@@ -1,19 +1,19 @@
-:construction: Este é um projeto em construção. Ao longo desse semestre iremos atualizando o README. :construction:
+ > :construction: Este é um projeto de Redes de Computadores, feito na linguagem C. É um projeto que vai ser composto por mais funcionalidades ao longo desse sementres. Ao decorrer desse semestre iremos atualizando o README. :construction:
 
-# Funcionalidades
+# :stop_sign: Funcionalidades
 
 - Le um arquivo de entrada.
 - Cria pacotes UDP.
 - Envia para outro ponto e recebe esses pacotes.
 - Faz a análise, verifica a integridade, remonta o arquivo.
 
-# Próximas Funcionalidades
+# :vertical_traffic_light: Próximas Funcionalidades
 
 - Criar o cabeçalho do pacote IP
 - Criar um novo pacote IP
 - Adicionar os IP`s de origem e destino
 
-# Instruções de Uso:
+# :scroll: Instruções de Uso:
 
 ### :desktop_computer: Windows
 
@@ -28,7 +28,7 @@
 
 - Abra dois terminais para o cliente e servidor.
 
-# Abrir o projeto:
+# :scroll: Abrir o projeto:
 
 Para pegar o projeto é preciso seguir essas etapas:
 
@@ -42,8 +42,6 @@ Para pegar o projeto é preciso seguir essas etapas:
 
         
     cd RedesB
-    
-
 
 # :keyboard: Run Code:
 
@@ -52,24 +50,24 @@ Para pegar o projeto é preciso seguir essas etapas:
 - Inicialize o projeto RedesB com o WSL
 - Crie dois terminais WSL, um para o cliente e outro para o servidor
 - Use o comanado para compilar:
-    * o cliente (em um terminal):
+    * o cliente (em um terminal)
 
     ```
     gcc client.c -o cli
     ```
 
-    * e o servidor (no outro terminal):
+    * e o servidor (no outro terminal)
     ```
     gcc server.c -o server
     ```
 
 - Para rodar só digitar:
-    * em um dos terminais:
+    * em um dos terminais
     ```
     ./serv
     ```
 
-    * no outro terminal:
+    * no outro terminal
     ```
     ./cli
     ```
@@ -97,3 +95,7 @@ Para pegar o projeto é preciso seguir essas etapas:
     ```
 - E veja  a mágica acontecer
 
+# Contribuidores
+
+Pedro | Fabricio | César
+[https://github.com/pedro-it-Rep] | [https://github.com/Fabricio-Silva-Cardoso1] | [https://github.com/cesarmmanzano]
