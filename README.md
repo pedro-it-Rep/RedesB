@@ -1,22 +1,76 @@
-# RedesB
+# Funcionalidades
 
-# :warning:
-:warning: Esse projeto consiste em criar comunicação entre dois pontos, usando o protocolo UDP da camada de transporte.
-
-O que faz:
 - Le um arquivo de entrada.
 - Cria pacotes UDP.
 - Envia para outro ponto e recebe esses pacotes.
 - Faz a análise, verifica a integridade, remonta o arquivo.
 
-Instruções de Uso:
-- Usamos o WSL no Visual Studio Code.
-- Escrevemos um .txt com uma mensagem.
-- Rodamos, em dois terminais separados, o cliente e o servidor.
-- Printamos a mensagem remontada.
+# Próximas Funcionalidades
 
-Teste:
+- Criar o cabeçalho do pacote IP
+- Criar um novo pacote IP
+- Adicionar os IP`s de origem e destino
 
-- .txt escrito "Este arquivo serve apenas de teste para o lab03, onde devemos ler um arquivo txt,
-separa-lo em pacotes e enviar utilizando o protocolo udp, além de remonta-lo
-no cliente".
+# Instruções de Uso:
+
+## Windows
+
+- Use o Visual Studio Code (recomendação)
+- Baixe o WSL na Microsoft Store
+- Baixe as extensões:
+    * C/C++
+    * C/C++ Compipler Run
+    * Remote - WS
+
+## Linux
+
+- Abra dois terminais para o cliente e servidor.
+
+# Abrir o projeto:
+
+Para pegar o projeto é preciso seguir essas etapas:
+    1.Baixe o código fonte do projeto usando o comando:
+
+    ```
+    git clone https://github.com/pedro-it-Rep/RedesB.git
+
+    2.Descompacte o arquivo.
+    3. Vá para o repositório do projeto.
+    ```
+    cd RedesB
+
+# Run Code:
+
+## Windows
+
+- Inicialize o projeto RedesB com o WSL
+- Crie dois terminais WSL, um para o cliente e outro para o servidor
+- Use o comanado para compilar:
+    - o cliente (em um terminal)
+    ```
+    gcc client.c -o cli
+    - e o servidor (no outro terminal)
+    ```
+    gcc server.c -o server
+- Para rodar só digitar:
+    ```./serv
+    - em um terminal
+    ```./cli
+- E veja  a mágica acontecer
+
+## Linux
+
+- Abra dois terminais
+- Use o comanado para compilar:
+    - o cliente (em um terminal)
+    ```
+    gcc client.c -o cli
+    - e o servidor (no outro terminal)
+    ```
+    gcc server.c -o server
+- Para rodar só digitar:
+    ```./serv
+    - em um terminal
+    ```./cli
+- E veja  a mágica acontecer
+
