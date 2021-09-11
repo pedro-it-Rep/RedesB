@@ -1,6 +1,6 @@
 # RedesB
 
-Esse projeto consiste em criar comunicação entre dois pontos, usando o protocolo UDP da camada de transporte.
+:warning: Esse projeto consiste em criar comunicação entre dois pontos, usando o protocolo UDP da camada de transporte.
 
 O que faz:
 - Le um arquivo de entrada.
