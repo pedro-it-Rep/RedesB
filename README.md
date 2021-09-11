@@ -1,4 +1,4 @@
-:construction: Este é um projeto em construção. Ao longo desse semestre iremos ataulizando o README :construction:
+:construction: Este é um projeto em construção. Ao longo desse semestre iremos atualizando o README. :construction:
 
 # Funcionalidades
 
