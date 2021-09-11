@@ -2,7 +2,7 @@
 
 # :stop_sign: Funcionalidades
 
-- Le um arquivo de entrada.
+- Lê um arquivo de entrada.
 - Cria pacotes UDP.
 - Envia para outro ponto e recebe esses pacotes.
 - Faz a análise, verifica a integridade, remonta o arquivo.
