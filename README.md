@@ -31,17 +31,18 @@
 # Abrir o projeto:
 
 Para pegar o projeto é preciso seguir essas etapas:
+
     1.Baixe o código fonte do projeto usando o comando:
+
     ```
     git clone https://github.com/pedro-it-Rep/RedesB.git
-    ```
 
     2.Descompacte o arquivo.
     3. Vá para o repositório do projeto.
 
     ```
     cd RedesB
-    ```
+
 
 # :keyboard: Run Code:
 
