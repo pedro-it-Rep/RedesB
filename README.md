@@ -96,6 +96,8 @@ Para pegar o projeto é preciso seguir essas etapas:
 - E veja  a mágica acontecer
 
 # Contribuidores
-
-* Pedro [https://github.com/pedro-it-Rep] | * Fabricio [https://github.com/Fabricio-Silva-Cardoso1] | * César [https://github.com/cesarmmanzano] |
-------------------------------------------| --------------------------------------------------------|--------------------------------------------|
+| Name | Git account |
+|------|-------------|
+| Pedro| [https://github.com/pedro-it-Rep] | 
+| Fabricio | [https://github.com/Fabricio-Silva-Cardoso1]|
+| César | [https://github.com/cesarmmanzano]|
