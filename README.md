@@ -31,12 +31,9 @@
 Para pegar o projeto é preciso seguir essas etapas:
     1.Baixe o código fonte do projeto usando o comando:
 
-    ```
     git clone https://github.com/pedro-it-Rep/RedesB.git
-
     2.Descompacte o arquivo.
     3. Vá para o repositório do projeto.
-    ```
     cd RedesB
 
 # Run Code:
@@ -47,11 +44,11 @@ Para pegar o projeto é preciso seguir essas etapas:
 - Crie dois terminais WSL, um para o cliente e outro para o servidor
 - Use o comanado para compilar:
     - o cliente (em um terminal)
-    ```
-    gcc client.c -o cli
+    ``gcc client.c -o cli
+    
     - e o servidor (no outro terminal)
-    ```
-    gcc server.c -o server
+    
+    ``gcc server.c -o server
 - Para rodar só digitar:
     ```./serv
     - em um terminal
