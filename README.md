@@ -9,16 +9,16 @@
 
 # :vertical_traffic_light: Próximas Funcionalidades
 
-- Criar o cabeçalho do pacote IP
-- Criar um novo pacote IP
-- Adicionar os IP`s de origem e destino
+- Criar o cabeçalho do pacote IP.
+- Criar um novo pacote IP.
+- Adicionar os IP`s de origem e destino.
 
 # :scroll: Instruções de Uso:
 
 ### :desktop_computer: Windows
 
-- Use o Visual Studio Code (recomendação)
-- Baixe o WSL na Microsoft Store
+- Use o Visual Studio Code (recomendação).
+- Baixe o WSL na Microsoft Store.
 - Baixe as extensões:
     * C/C++
     * C/C++ Compipler Run
@@ -30,7 +30,7 @@
 
 # :scroll: Abrir o projeto:
 
-Para pegar o projeto é preciso seguir essas etapas:
+Para pegar o projeto é preciso seguir essas etapas.
 
 1.Baixe o código fonte do projeto usando o comando:
 
@@ -38,7 +38,7 @@ Para pegar o projeto é preciso seguir essas etapas:
     git clone https://github.com/pedro-it-Rep/RedesB.git
         
 2.Descompacte o arquivo.
-3. Vá para o repositório do projeto.
+3.Vá para o repositório do projeto.
 
         
     cd RedesB
@@ -47,8 +47,8 @@ Para pegar o projeto é preciso seguir essas etapas:
 
 ### :desktop_computer: Windows
 
-- Inicialize o projeto RedesB com o WSL
-- Crie dois terminais WSL, um para o cliente e outro para o servidor
+- Inicialize o projeto RedesB com o WSL.
+- Crie dois terminais WSL, um para o cliente e outro para o servidor.
 - Use o comanado para compilar:
     * o cliente (em um terminal)
 
@@ -77,6 +77,7 @@ Para pegar o projeto é preciso seguir essas etapas:
 
 - Abra dois terminais
 - Use o comanado para compilar:
+- 
     * o cliente (em um terminal)
     ```
     gcc client.c -o cli
