@@ -99,6 +99,6 @@ Para pegar o projeto é preciso seguir essas etapas.
 # Contribuidores
 | Name | Git account |
 |------|-------------|
-| Pedro| [https://github.com/pedro-it-Rep] | 
-| Fabricio | [https://github.com/Fabricio-Silva-Cardoso1]|
-| César | [https://github.com/cesarmmanzano]|
+| Pedrp Ignácio Trevisan| [https://github.com/pedro-it-Rep] | 
+| Fabricio Silva Cardoso| [https://github.com/Fabricio-Silva-Cardoso1]|
+| Cesar Marrote Manzano| [https://github.com/cesarmmanzano]|
