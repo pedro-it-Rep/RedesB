@@ -46,6 +46,7 @@ Para pegar o projeto é preciso seguir essas etapas.
     git clone https://github.com/pedro-it-Rep/RedesB.git
         
 2.Descompacte o arquivo.
+
 3.Vá para o repositório do projeto.
 
         
