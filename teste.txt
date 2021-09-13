@@ -1,0 +1,3 @@
+Este arquivo serve apenas de teste para o lab03, onde devemos ler um arquivo txt,
+separa-lo em pacotes e enviar utilizando o protocolo udp, além de remonta-lo
+no cliente
