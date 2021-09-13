@@ -1,11 +1,19 @@
- > :construction: Este é um projeto de Redes de Computadores, feito na linguagem C. É um projeto que vai ser composto por mais funcionalidades ao longo desse sementres. Ao decorrer desse semestre iremos atualizando o README. :construction:
+ > :construction: Este é um projeto de Redes de Computadores, feito na linguagem C. É um projeto que vai ser composto por mais funcionalidades ao longo desse sementres, onde ao decorrer desse semestre iremos atualizando o README. :construction:
 
 # :stop_sign: Funcionalidades
 
 - Lê um arquivo de entrada.
 - Cria pacotes UDP.
-- Envia para outro ponto e recebe esses pacotes.
-- Faz a análise, verifica a integridade, remonta o arquivo.
+- Envia para outro programa, onde nós chamamos de cliente.
+- Faz a análise, verifica a integridade do pacote atraves do checksum.
+- Caso o checksum tenha se mantido, remonta o arquivo, caso contrário, dropa o pacote.
+
+# :warning: TODO
+
+Alterações no codigo que podem ser feita para melhorar seu entendimento ou para adicionar novas funcionalidades
+
+- Modularizar melhor o código;
+- Adicionar novos comentários ao longo do programa;
 
 # :vertical_traffic_light: Próximas Funcionalidades
 
@@ -21,7 +29,7 @@
 - Baixe o WSL na Microsoft Store.
 - Baixe as extensões:
     * C/C++
-    * C/C++ Compipler Run
+    * C/C++ Compiler Run
     * Remote - WS
 
 ### :desktop_computer: Linux
