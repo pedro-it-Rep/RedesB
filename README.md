@@ -4,8 +4,9 @@
 
 - Lê um arquivo de entrada.
 - Cria pacotes UDP.
+- Encapsula o pacote UDP em um pacote IP
 - Envia para outro programa, onde nós chamamos de cliente.
-- Faz a análise, verifica a integridade do pacote atraves do checksum.
+- Faz a análise, verifica a integridade do pacote atraves do checksum duas vezes, uma para o pacote IP e outra para o pacote UDP.
 - Caso o checksum tenha se mantido, remonta o arquivo, caso contrário, dropa o pacote.
 
 # :warning: TODO
@@ -13,13 +14,10 @@
 Alterações no codigo que podem ser feita para melhorar seu entendimento ou para adicionar novas funcionalidades
 
 - Modularizar melhor o código;
-- Adicionar novos comentários ao longo do programa;
 
 # :vertical_traffic_light: Próximas Funcionalidades
 
-- Criar o cabeçalho do pacote IP.
-- Criar um novo pacote IP.
-- Adicionar os IP`s de origem e destino.
+- Nothing to see here
 
 # :scroll: Instruções de Uso:
 
