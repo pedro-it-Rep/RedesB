@@ -12,10 +12,12 @@
 #include <string.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include "headerUDP.h"
+#include "ipHeader.h"
 
 UDP_PROTOCOL initial_Pckt;
 UDP_PROTOCOL fragmented_Pckt;
+IP_Header ip_pckt;
+
 char aux[2000];
 
 void fragment_file(FILE *arq);
@@ -27,7 +29,8 @@ int main()
     arq = fopen("teste.txt", "r");
 
     fragment_file(arq);
-    send_package(1);
+    create_packetIP(UDP, &ip_pckt);
+    send_package(UDP);
 
     return 0;
 }
@@ -97,7 +100,7 @@ void send_package(int PROTO)
 
     // Filling server information
     server.sin_family = AF_INET; // IPv4
-    server.sin_addr.s_addr = INADDR_ANY; // Localhost -> Pode ser alterado para um IP não proprietario (Ex: 8.8.8.8)
+    server.sin_addr.s_addr = ip_pckt.saddr; // Localhost -> Pode ser alterado para um IP não proprietario (Ex: 8.8.8.8)
     server.sin_port = htons(1234); //Can be changed → src_port
 
     // Bind the socket with the server address
@@ -112,7 +115,7 @@ void send_package(int PROTO)
 
     size = sizeof(client);
     //Espera uma solicitação do cliente para poder enviar os pacotes
-    recvfrom(sockfd, (char *)&fragmented_Pckt,  sizeof fragmented_Pckt, 0, (struct sockaddr *)&server, &size);
+    recvfrom(sockfd, (char *)&ip_pckt,  sizeof ip_pckt, 0, (struct sockaddr *)&server, &size);
 
     switch(PROTO){
         case 0: //TCP
@@ -130,7 +133,11 @@ void send_package(int PROTO)
                 fragmented_Pckt.chksum = csum(fragmented_Pckt.udp_Data, sizeof(UDP_PROTOCOL));
                 printf("chksum = %d \n", fragmented_Pckt.chksum);
                 fragmented_Pckt.len = sizeof(fragmented_Pckt);
-                if (sendto(sockfd, (char *)&fragmented_Pckt, sizeof fragmented_Pckt, 0, (struct sockaddr *)&server, sizeof server) < 0){
+                ip_pckt.id = j;
+                ip_pckt.ipData = fragmented_Pckt;
+                ip_pckt.csum = ip_csum((unsigned short *)&ip_pckt.ipData, sizeof(IP_Header) + sizeof(UDP_PROTOCOL)); 
+                ip_pckt.header_len = sizeof(ip_pckt);
+                if (sendto(sockfd, (char *)&ip_pckt, sizeof ip_pckt, 0, (struct sockaddr *)&server, sizeof server) < 0){
                     printf("Erro ao enviar o pacote");
                 }
                 j++;

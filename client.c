@@ -3,7 +3,7 @@
  * Fabricio Silva Cardoso					RA: 18023481
  * Pedro Ignácio Trevisan					RA: 18016568
  */
-
+//Arrumar recebimento e checksum
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -14,11 +14,13 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
-#include "headerUDP.h"
+#include "ipHeader.h"
 
 UDP_PROTOCOL fragmented_Pckt;
+IP_Header ip_pckt;
 
 void receive_pckt();
+int verify_IP_pckt();
 int verify_pckt();
 
 int main()
@@ -40,7 +42,7 @@ void receive_pckt()
 {
 
     int sockfd, size, j;
-    int verify_checksum;
+    int verify_checksum, verify_IP_checksum;
     struct sockaddr_in client;
     struct hostent *hp, *gethostbyname();
       
@@ -60,33 +62,76 @@ void receive_pckt()
 	client.sin_family = AF_INET;
 	client.sin_port = htons(1234);
 
-    if (sendto(sockfd, (char *)&fragmented_Pckt, sizeof fragmented_Pckt, 0, (struct sockaddr *)&client, sizeof client) < 0)
+    size = sizeof(client);
+
+    if (sendto(sockfd, (char *)&ip_pckt, sizeof ip_pckt, 0, (struct sockaddr *)&client, sizeof client) < 0)
     {
         printf("Erro ao enviar o pacote");
     }
 
     while(1)
     {
-        recvfrom(sockfd, (char *)&fragmented_Pckt,  sizeof fragmented_Pckt, 0, (struct sockaddr *)&client, &size); // ???
-        verify_checksum = verify_pckt();
+        recvfrom(sockfd, (char *)&ip_pckt,  sizeof ip_pckt, 0, (struct sockaddr *)&client, &size);
+        verify_IP_checksum = verify_IP_pckt();
 
         // Caso o pacote tenha sido modificado, é necessario dropa-lo, caso contrario salvamos ele em um arquivo
-        if(verify_checksum < 0)
+        if(verify_IP_checksum < 0)
         {
-            printf("Pacote dropado \n");
+            printf("Pacote IP dropado \n");
             j++;
-            if(j == n_fragments) break;
+            if(j == n_fragments) {
+                close(sockfd);
+                break;
+            }
         } 
         else 
         {
-            FILE *fp = fopen("cli_file.txt","a+");
-            fprintf(fp, "%s", fragmented_Pckt.udp_Data);
-            fclose(fp);
-            j++;
-            if(j == n_fragments) break;
+            fragmented_Pckt = ip_pckt.ipData;
+            verify_checksum = verify_pckt();
+            if(verify_checksum < 0){
+                printf("Pacote UDP dropado \n");
+                if(j == n_fragments) {
+                    close(sockfd);
+                    break;
+                }
+            } else {
+
+                FILE *fp = fopen("cli_file.txt","a+");
+                fprintf(fp, "%s", fragmented_Pckt.udp_Data);
+                fclose(fp);
+                j++;
+                if(j == n_fragments) {
+                    close(sockfd);
+                    break;
+                }
+
+            }
         }
     }
 }
+
+/*
+ *******************************************************************
+ * verify_IP_pckt()                                                *
+ * Paramentros: Essa função não utiliza parametros                 *
+ * Funcionalidade: Função responsavel por verificar a integridade  *
+ * dos pacotes IP recebidos                                        *
+ *******************************************************************
+ */
+int verify_IP_pckt()
+{
+    int csum_value, len_value;
+    csum_value = ip_csum((unsigned short *)&ip_pckt.ipData, sizeof(IP_Header) + sizeof(UDP_PROTOCOL)); 
+    len_value = sizeof(ip_pckt);
+    printf("IP -> CSUM_VALUE = %d // chksum = %d \n", csum_value, ip_pckt.csum);
+    if(len_value == ip_pckt.header_len)
+    {
+        return 1; 
+    } else {
+        return -1;
+    }
+}
+
 
 /*
  *******************************************************************
