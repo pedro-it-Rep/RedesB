@@ -84,21 +84,7 @@ void create_packetIP(int isUDP, IP_Header *ip_pckt){
     } else{
         ip_pckt->proto = UDP;
     }
-    getIP();
-
-}
-
-/*
-*************************************************************************
- * getIP(IP_Header *ip_pckt)                                            *
- * Paramentros:                                                         *
- * @params ip_pckt = struct com os campos do pacote IP                  *
- * @params Funcionalidade: preenche os campos de IP do pacote           *
- ************************************************************************
- */
-void getIP(IP_Header *ip_pckt){
 
     ip_pckt->saddr = INADDR_ANY;
     ip_pckt->daddr = INADDR_ANY;
-
 }
